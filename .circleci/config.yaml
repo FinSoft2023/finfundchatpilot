@@ -31,6 +31,8 @@ jobs:
             - .pnpm-store
       - run:
           name: Build
+          environment:
+            - NITRO_PRESET: azure
           command: |
             cd src
             pnpm build

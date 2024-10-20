@@ -36,18 +36,19 @@ jobs:
           command: |
             cd src
             pnpm build
-      - run:
-          name: Deploy
-          # when:
-          #   condition:
-          #     equal: [ main, << pipeline.git.branch >> ]
-          environment:
-            - SWA_CLI_APP_NAME: finfundchatpilot
-            - SWA_CLI_DEPLOY_ENV: production
-            # - SWA_CLI_DEPLOYMENT_TOKEN: $SWA_CLI_DEPLOYMENT_TOKEN
-          command: |
-            cd src/apps/facingweb
-            pnpm swa deploy
+      - when:
+          condition:
+            equal: [ main, << pipeline.git.branch >> ]
+          steps:
+            - run:
+                name: Deploy
+                environment:
+                  - SWA_CLI_APP_NAME: finfundchatpilot
+                  - SWA_CLI_DEPLOY_ENV: production
+                  # - SWA_CLI_DEPLOYMENT_TOKEN: $SWA_CLI_DEPLOYMENT_TOKEN
+                command: |
+                  cd src/apps/facingweb
+                  pnpm swa deploy
 
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/workflows/ & https://circleci.com/docs/configuration-reference/#workflows

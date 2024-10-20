@@ -13,5 +13,8 @@
     "nuxt": "^3.13.2",
     "vue": "latest",
     "vue-router": "latest"
+  },
+  "devDependencies": {
+    "@azure/static-web-apps-cli": "^2.0.1"
   }
 }

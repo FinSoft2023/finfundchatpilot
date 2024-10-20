@@ -9,77 +9,46 @@ jobs:
 
     steps:
       - checkout
+      - restore_cache:
+          name: Restore pnpm Package Cache
+          keys:
+            - pnpm-packages-{{ checksum "src/pnpm-lock.yaml" }}
+      - run:
+          name: Install pnpm package manager
+          command: |
+            corepack enable
+            corepack prepare pnpm@latest-9 --activate
+            pnpm config set store-dir .pnpm-store
+      - run:
+          name: Install Dependencies
+          command: |
+            cd src
+            pnpm install
+      - save_cache:
+          name: Save pnpm Package Cache
+          key: pnpm-packages-{{ checksum "src/pnpm-lock.yaml" }}
+          paths:
+            - .pnpm-store
+      - run:
+          name: Build
+          environment:
+            - NITRO_PRESET: azure
+          command: |
+            cd src
+            pnpm build
       - when:
-        condition:
-          equal: [ main, << pipeline.git.branch >> ]
-        steps:
-          - restore_cache:
-              name: Restore pnpm Package Cache
-              keys:
-                - pnpm-packages-{{ checksum "src/pnpm-lock.yaml" }}
-          - run:
-              name: Install pnpm package manager
-              command: |
-                corepack enable
-                corepack prepare pnpm@latest-9 --activate
-                pnpm config set store-dir .pnpm-store
-          - run:
-              name: Install Dependencies
-              command: |
-                cd src
-                pnpm install
-          - save_cache:
-              name: Save pnpm Package Cache
-              key: pnpm-packages-{{ checksum "src/pnpm-lock.yaml" }}
-              paths:
-                - .pnpm-store
-          - run:
-              name: Build
-              environment:
-                - NITRO_PRESET: azure
-              command: |
-                cd src
-                pnpm build
-          - run:
-              name: Deploy
-              environment:
-                - SWA_CLI_APP_NAME: finfundchatpilot
-                - SWA_CLI_DEPLOY_ENV: production
-                # - SWA_CLI_DEPLOYMENT_TOKEN: $SWA_CLI_DEPLOYMENT_TOKEN
-              command: |
-                cd src/apps/facingweb
-                pnpm swa deploy
-      - unless:
-        condition:
-          equal: [ main, << pipeline.git.branch >> ]
-        steps:
-          - restore_cache:
-              name: Restore pnpm Package Cache
-              keys:
-                - pnpm-packages-{{ checksum "src/pnpm-lock.yaml" }}
-          - run:
-              name: Install pnpm package manager
-              command: |
-                corepack enable
-                corepack prepare pnpm@latest-9 --activate
-                pnpm config set store-dir .pnpm-store
-          - run:
-              name: Install Dependencies
-              command: |
-                cd src
-                pnpm install
-          - save_cache:
-              name: Save pnpm Package Cache
-              key: pnpm-packages-{{ checksum "src/pnpm-lock.yaml" }}
-              paths:
-                - .pnpm-store
-          - run:
-              name: Build
-              environment:
-                - NITRO_PRESET: azure
-              command: |
-                cd src
-                pnpm build
+          condition:
+            equal: [ main, << pipeline.git.branch >> ]
+          steps:
+            - run:
+                name: Deploy
+                environment:
+                  - SWA_CLI_APP_NAME: finfundchatpilot
+                  - SWA_CLI_DEPLOY_ENV: production
+                  # - SWA_CLI_DEPLOYMENT_TOKEN: $SWA_CLI_DEPLOYMENT_TOKEN
+                command: |
+                  cd src/apps/facingweb
+                  pnpm swa deploy
 
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/workflows/ & https://circleci.com/docs/configuration-reference/#workflows

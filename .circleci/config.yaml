@@ -40,7 +40,7 @@ jobs:
           name: Deploy
           environment:
             - SWA_CLI_APP_NAME: finfundchatpilot
-            - SWA_CLI_DEPLOY_ENV: Production
+            - SWA_CLI_DEPLOY_ENV: production
             # - SWA_CLI_DEPLOYMENT_TOKEN: $SWA_CLI_DEPLOYMENT_TOKEN
           command: |
             cd src/apps/facingweb

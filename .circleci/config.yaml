@@ -38,9 +38,9 @@ jobs:
             pnpm build
       - run:
           name: Deploy
-          when:
-            condition:
-              equal: [ main, << pipeline.git.branch >> ]
+          # when:
+          #   condition:
+          #     equal: [ main, << pipeline.git.branch >> ]
           environment:
             - SWA_CLI_APP_NAME: finfundchatpilot
             - SWA_CLI_DEPLOY_ENV: production

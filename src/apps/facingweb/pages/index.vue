@@ -1,16 +1,29 @@
+<script setup lang="ts">
+const modules = [{
+  title: 'VueUse',
+  description: 'Collection of essential Vue Composition Utilities for Vue 2 and 3.',
+  to: 'https://github.com/vueuse/vueuse',
+  icon: 'i-simple-icons-nuxtdotjs'
+}, {
+  title: 'ESLint',
+  description: 'ESLint module for Nuxt.',
+  to: 'https://github.com/nuxt-community/eslint-module',
+  icon: 'i-simple-icons-eslint'
+}, {
+  title: 'Tailwind CSS',
+  description: 'Add Tailwind CSS to your Nuxt application in seconds with PurgeCSS included for minimal CSS.',
+  to: 'https://github.com/nuxt-modules/tailwindcss',
+  icon: 'i-simple-icons-tailwindcss'
+}]
+</script>
+
 <template>
-  <div>
-    <h1>Welcome to Chat starter project</h1>
-    <h2>This project is inside the (facingweb)</h2>
-    <p>The purpose of this project is for piloting the chat app</p>
-    <p>Click on the link below to go to the chat page</p>
-    <ul>
-      <li>
-        <NuxtLink to="/chat">Go to chat</NuxtLink>
-      </li>
-      <li>
-        <NuxtLink to="/about">Go to about</NuxtLink>
-      </li>
-    </ul>
-  </div>
+  <UPageGrid>
+    <UPageCard v-for="(module, index) in modules" :key="index" v-bind="module" target="_blank">
+      <template #description>
+        <span class="line-clamp-2">{{ module.description }}</span>
+      </template>
+    </UPageCard>
+  </UPageGrid>
 </template>
+

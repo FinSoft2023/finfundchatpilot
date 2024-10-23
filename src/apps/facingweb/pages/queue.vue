@@ -11,7 +11,7 @@
 </template>
 <script lang="ts" setup>
 const linkto = () => {
-    navigateTo('/menuline')
+    navigateTo('/menulinemember');
 }
     ;
 </script>

@@ -39,7 +39,7 @@
             <div class="text-center">
                 <h1 class="text-4xl font-bold">ตั้งค่าความปลอดภัย</h1>
             </div>
-            <UButton to="/menulinemember"
+            <UButton to="/transaction"
                 block>ยืนยัน</UButton>
         </div>
     </div>

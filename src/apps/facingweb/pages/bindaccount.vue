@@ -39,14 +39,33 @@
             <div class="text-center">
                 <h1 class="text-4xl font-bold">ตั้งค่าความปลอดภัย</h1>
             </div>
-            <UButton to="/transaction"
+            <UButton @click="newData"
                 block>ยืนยัน</UButton>
         </div>
     </div>
 </template>
 <script setup lang="ts">
+import { storeToRefs } from 'pinia';
+import { useModuleStore } from '@/stores/module-store';
+
+const store = useModuleStore();
+const { state } = storeToRefs(store);
+
 const links = () => {
     navigateTo('/menuline');
 }
 const steps = ref(0);
+
+const newData = () => {
+    const setData = {
+        accountstate: 1,
+    };
+    state.value.accountstate = setData.accountstate;
+    console.log('data updated', newData);
+    if (state.value.scanstate === 1) {
+        navigateTo('/transaction');
+    }else{
+        navigateTo('/menuline');
+    }
+};
 </script>

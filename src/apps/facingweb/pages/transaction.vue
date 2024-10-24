@@ -1,7 +1,6 @@
 <template>
     <div class="p-4">
-        <h1 @click="links"
-            class="text-xl mb-4 font-bold">Line OA</h1>
+         <h1 @click="links" class="text-xl mb-4 font-bold">Line OA</h1>
         <div class="grid grid-cols-2 gap-4 mb-4">
             <UPageCard v-for="(module, index) in modules"
                 :key="index"
@@ -10,18 +9,13 @@
                 @click="toggleCard(index)">
             </UPageCard>
         </div>
-        <UButton @click="newData"
+        <UButton to="/prepare"
             block>ยืนยัน</UButton>
     </div>
 </template>
 
 <script setup lang="ts">
 import { ref, computed } from 'vue';
-import { storeToRefs } from 'pinia';
-import { useModuleStore } from '@/stores/module-store';
-
-const store = useModuleStore();
-const { state } = storeToRefs(store);
 
 // สร้างตัวแปรเพื่อเก็บดัชนีการ์ดที่ถูกเลือกหลายใบ
 const selectedCards = ref<number[]>([]);
@@ -44,57 +38,46 @@ const toggleCard = (index: number) => {
 
 // สร้าง computed เพื่อเก็บชื่อการ์ดที่ถูกเลือก
 const selectedModules = computed(() =>
-    selectedCards.value.map(index => ({
-        title: modules[index].title,
-        icon: modules[index].icon
-    }))
+    selectedCards.value.map(index => modules[index].title)
 );
-
-const newData = () => {
-    state.value.transaction = selectedModules;
-    console.log('data updated', newData);
-    if (selectedModules.value.length > 0) {
-        navigateTo('/prepare');
-    }
-};
-
 const links = () => {
     navigateTo('/menuline');
 }
-
-
-
 const modules = [
     {
+        title: 'ฝากเงิน',
+        to: '',
+        icon: 'i-heroicons-wallet',
+    },
+    {
+        title: 'ถอนเงิน',
+        to: '',
+        icon: 'i-heroicons-wallet',
+    },
+    {
+        title: 'กู้สามัญ',
+        to: '',
+        icon: 'i-mdi-cash-fast',
+    },
+    {
+        title: 'กู้ฉุกเฉิน',
+        to: '',
+        icon: 'i-mdi-cash-fast',
+    },
+    {
+        title: 'สมัครฌาปนกิจ',
+        to: '',
+        icon: 'i-mdi-account-child',
+    },
+    {
+        title: 'สมัครสมาชิก',
+        to: '',
+        icon: 'i-mdi-user-add',
+    },
+    {
         title: 'สอบถามข้อมูล และอื่นๆ',
+        to: '',
         icon: 'i-mdi-document',
     },
-
-
 ];
-if (state.value.accountstate === 1) {
-    modules.push({
-        title: 'สมัครสมาชิกใหม่',
-        icon: 'i-mdi-user',
-    });
-} else if (state.value.accountstate === 2) {
-        modules.push(
-            {
-                title: 'ฝากเงิน',
-                icon: 'i-heroicons-wallet',
-            },
-            {
-                title: 'ถอนเงิน',
-                icon: 'i-heroicons-wallet',
-            },
-            {
-                title: 'กู้สามัญ',
-                icon: 'i-mdi-cash-fast',
-            },
-            {
-                title: 'กู้ฉุกเฉิน',
-                icon: 'i-mdi-cash-fast',
-            },
-        );
-    }
 </script>

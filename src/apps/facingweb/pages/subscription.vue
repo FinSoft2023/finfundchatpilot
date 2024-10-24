@@ -2,7 +2,7 @@
     <div class="p-4">
         <h1 @click="links"
             class="text-xl font-bold">Line OA</h1>
-        <p class="text-base mb-4 font-semibold">กรอกข้อมูลสมัครสมาชิก</p>
+            <p class="text-base mb-4 font-semibold">กรอกข้อมูลสมัครสมาชิก</p>
         <div class="space-y-4 mb-8">
             <p>ชื่อ-กุล</p>
             <UInput></UInput>
@@ -16,30 +16,12 @@
             <UInput></UInput>
         </div>
         <div class="space-y-4">
-            <UButton @click="manualclick"
+            <UButton to="/preparesuccess"
                 block>ยืนยัน</UButton>
         </div>
     </div>
 </template>
 <script setup lang="ts">
-import { storeToRefs } from 'pinia';
-import { useModuleStore } from '@/stores/module-store';
-
-const store = useModuleStore();
-const { state } = storeToRefs(store);
-
-const manualclick = () => {
-    const setData = {
-        preparestate: 1,
-    };
-    state.value.preparestate = setData.preparestate;
-    if (state.value.scanstate === 0) {
-        navigateTo('/menuline');
-    } else if (state.value.scanstate === 1) {
-        navigateTo('/prepare');
-    }
-}
-
 const links = () => {
     navigateTo('/menuline');
 }

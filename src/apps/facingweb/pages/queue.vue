@@ -10,16 +10,8 @@
     </div>
 </template>
 <script lang="ts" setup>
-import { storeToRefs } from 'pinia';
-import { useModuleStore } from '@/stores/module-store';
-
-const store = useModuleStore();
-const { state } = storeToRefs(store);
 const linkto = () => {
-    const setData = {
-        accountstate: 2,
-    };
-    state.value.accountstate = setData.accountstate;
-    navigateTo('/menuline');
-};
+    navigateTo('/menulinemember');
+}
+    ;
 </script>

@@ -16,7 +16,7 @@
                             class="w-5 h-5 text-primary"></UIcon>
                         <p>เตรียมข้อมูลเเล้ว</p>
                     </div>
-                    <div class="flex justify-end mb-4 space-x-2  items-center">
+                    <div class="flex justify-end items-center">
                         <UButton color="primary"
                             to="queue">พร้อมรับคิว</UButton>
                     </div>

@@ -13,7 +13,7 @@
 
 <script setup lang="ts">
 const links = () => {
-    navigateTo('/menuline');
+    navigateTo('/');
 }
 
 const modules = [

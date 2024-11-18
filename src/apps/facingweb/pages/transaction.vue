@@ -59,7 +59,7 @@ const newData = () => {
 };
 
 const links = () => {
-    navigateTo('/menuline');
+    navigateTo('/');
 }
 
 

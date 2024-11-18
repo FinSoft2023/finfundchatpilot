@@ -41,6 +41,6 @@ const manualclick = () => {
 }
 
 const links = () => {
-    navigateTo('/menuline');
+    navigateTo('/');
 }
 </script>

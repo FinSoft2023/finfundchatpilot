@@ -21,7 +21,7 @@ const store = useModuleStore();
 const { state } = storeToRefs(store);
 
 const links = () => {
-    navigateTo('/menuline');
+    navigateTo('/');
 }
 
 // Initialize modules array

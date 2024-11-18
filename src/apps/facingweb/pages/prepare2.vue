@@ -59,6 +59,7 @@
             <UButton color="primary" size="xl" to="queue" block>รับคิว</UButton>
         </UCard>
     </div>
+    
 </template>
 
 
@@ -71,7 +72,7 @@ const store = useModuleStore();
 const { state } = storeToRefs(store);
 
 const links = () => {
-    navigateTo('/menuline');
+    navigateTo('/');
 }
 
 const buttonColor = computed(() => {

@@ -53,52 +53,52 @@
       <div class="col-span-2 mt-6">
         <p class="ml-[2cm] text-gray-900 dark:text-gray-90">
           <!-- <FMoneyAmount :amount="data?.amount" /> -->
-          <FFiLL :data="data?.amount"
+          <FFiLL :data="data?.depositamount"
                  class="min-w-80" />
         </p>
       </div>
       <div>
         <p class="mt-6 ml-0mm text-gray-900 dark:text-gray-90">
           <!-- <FMoneyAmount :amount="data?.amount" /> -->
-          <FFiLL :data="data?.amount"
+          <FFiLL :data="data?.depositamount"
                  class="min-w-80" />
         </p>
       </div>
       <div class="mt-5 ml-[2cm]">
-        <FFiLL class="min-w-28"
+        <FFiLL class="min-w-28 text-white"
                :data="data?.bank1" />
       </div>
       <div class="mt-5 ml-[1cm]">
-        <FFiLL class="min-w-28"
+        <FFiLL class="min-w-28 text-white"
                :data="data?.acccheck1" />
       </div>
       <div class="mt-5">
         <FFiLL :data="data?.amount"
-               class="min-w-80" />
+               class="min-w-80 text-white" />
       </div>
       <div class="ml-[2cm]">
-        <FFiLL class="min-w-28"
+        <FFiLL class="min-w-28 text-white"
                :data="data?.bank2" />
       </div>
       <div class="... ml-[1cm]">
-        <FFiLL class="min-w-28"
+        <FFiLL class="min-w-28 text-white"
                :data="data?.acccheck2" />
       </div>
       <div class="...">
         <FFiLL :data="data?.amount"
-               class="min-w-80" />
+               class="min-w-80 text-white" />
       </div>
       <div class="ml-[2cm]">
-        <FFiLL class="min-w-28"
+        <FFiLL class="min-w-28 text-white"
                :data="data?.bank3" />
       </div>
       <div class="... ml-[1cm]">
-        <FFiLL class="min-w-28"
+        <FFiLL class="min-w-28 text-white"
                :data="data?.acccheck3" />
       </div>
       <div class="...">
         <FFiLL :data="data?.amount"
-               class="min-w-80" />
+               class="min-w-80 text-white" />
       </div>
       <div class="col-span-2 mt-6">
         <p class="ml-[2cm] text-gray-900 dark:text-gray-90">
@@ -110,7 +110,7 @@
       <div class="mt-6">
         <p class="ml-0mm text-gray-900 dark:text-gray-90">
           <!-- <FMoneyAmount :amount="data?.amount" /> -->
-          <FFiLL :data="data?.amount"
+          <FFiLL :data="data?.amountsum"
                  class="min-w-80" />
         </p>
       </div>
@@ -120,3 +120,4 @@
 <script setup lang="ts">
 const { data } = await useFetch<any>('/api/sampleWithData');
 </script>
+

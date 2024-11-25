@@ -4,7 +4,9 @@ export default defineEventHandler(async (event) => {
     lname: "เพียงใจ",                //นามสกุล 
     name: 'นายสมชาย ใจดี',
     accNo: '1234567890',
+    depositamount:3000,
     amount: 1000,
+    amountsum: 3000,
     amountth: 'หนึ่งพันบาทถ้วน',
     date: '24 กรกฏาคม 2567',
     receivedLocation: "โรงพยาบาลศรีสะเกษ",

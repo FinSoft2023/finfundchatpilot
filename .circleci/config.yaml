@@ -4,7 +4,7 @@ jobs:
   build: # this can be any name you choose
     docker:
       - image: node:20
-    resource_class: large
+    resource_class: medium
     parallelism: 10
 
     steps:

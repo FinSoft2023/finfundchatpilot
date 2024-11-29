@@ -1,13 +1,13 @@
 <template>
     <div class="p-4">
-        <h1 @click="links" class="text-xl mb-4 font-bold">Line OA</h1>
+        <h1 @click="links"
+            class="text-xl mb-4 font-bold">Line OA</h1>
         <div class="grid grid-cols-2 gap-4">
-            <UPageCard 
-                v-for="(module, index) in modules"
-                :key="index"
-                class="text-red-500"
-                v-bind="module"
-                @click="handleClick(module)">
+            <UPageCard v-for="(module, index) in modules"
+                       :key="index"
+                       class="text-red-500"
+                       v-bind="module"
+                       @click="handleClick(module)">
             </UPageCard>
         </div>
     </div>
@@ -27,9 +27,9 @@ const links = () => {
 // Initialize modules array
 const modules = [
     {
-        title: 'สแกน',
+        title: 'ติดต่อสหกรณ์',
         to: state.value.accountstate === 0 ? '/bindaccount' : 'transaction',
-        icon: 'i-mdi-scan-helper',
+        icon: 'i-mdi-qrcode',
     }
 ];
 
@@ -39,7 +39,8 @@ if (state.value.accountstate === 0) {
         to: '/bindaccount',
         icon: 'i-mdi-connection',
     });
-} else if (state.value.accountstate === 1) {
+}
+else if (state.value.accountstate === 1) {
     modules.push({
         title: 'สมัครสมาชิกใหม่',
         to: '/subscription',

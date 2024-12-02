@@ -63,9 +63,9 @@ const newData = () => {
     state.value.accountstate = setData.accountstate;
     console.log('data updated', newData);
     if (state.value.scanstate === 1) {
-        navigateTo('/transaction');
+        navigateTo('/subscription');
     }else{
-        navigateTo('/menuline');
+        navigateTo('/subscription');
     }
 };
 </script>

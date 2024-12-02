@@ -28,7 +28,7 @@ const links = () => {
 const modules = [
     {
         title: 'ติดต่อสหกรณ์',
-        to: state.value.accountstate === 0 ? '/bindaccount' : 'transaction',
+        to: 'showQrCode',
         icon: 'i-mdi-qrcode',
     }
 ];
@@ -40,61 +40,62 @@ if (state.value.accountstate === 0) {
         icon: 'i-mdi-connection',
     });
 }
-else if (state.value.accountstate === 1) {
-    modules.push({
-        title: 'สมัครสมาชิกใหม่',
-        to: '/subscription',
-        icon: 'i-mdi-user',
-    });
-} else if (state.value.accountstate === 2) {
-    modules.push(
-        {
-            title: 'ยืนยันตัวตน',
-            to: '',
-            icon: 'i-mdi-account-lock-outline',
-        },
-        {
-            title: 'ข้อมูลสมาชิก',
-            to: '',
-            icon: 'i-mdi-user-card-details-outline',
-        },
-        {
-            title: 'เงินฝาก',
-            to: '',
-            icon: 'i-heroicons-wallet',
-        },
-        {
-            title: 'กู้ฉุกเฉิน',
-            to: '',
-            icon: 'i-mdi-cash-fast',
-        },
-        {
-            title: 'สัญญากู้',
-            to: '',
-            icon: 'i-mdi-file-document',
-        },
-        {
-            title: 'ฌาปนกิจ',
-            to: '',
-            icon: 'i-mdi-account-child',
-        },
-        {
-            title: 'รายการหักเดือนล่าสุด',
-            to: '',
-            icon: 'i-mdi-report-box-outline',
-        },
-        {
-            title: 'เงินปันผลและเฉลี่ยคืน',
-            to: '',
-            icon: 'i-mdi-dollar',
-        },
-        {
-            title: 'ตั้งค่าความปลอดภัย',
-            to: '',
-            icon: 'i-mdi-password',
-        },
-    );
-}
+// else if (state.value.accountstate === 1) {
+//     modules.push({
+//         title: 'สมัครสมาชิกใหม่',
+//         to: '/',
+//         icon: 'i-mdi-user',
+//     });
+// } 
+// else if (state.value.accountstate === 2) {
+//     modules.push(
+//         {
+//             title: 'ยืนยันตัวตน',
+//             to: '',
+//             icon: 'i-mdi-account-lock-outline',
+//         },
+//         {
+//             title: 'ข้อมูลสมาชิก',
+//             to: '',
+//             icon: 'i-mdi-user-card-details-outline',
+//         },
+//         {
+//             title: 'เงินฝาก',
+//             to: '',
+//             icon: 'i-heroicons-wallet',
+//         },
+//         {
+//             title: 'กู้ฉุกเฉิน',
+//             to: '',
+//             icon: 'i-mdi-cash-fast',
+//         },
+//         {
+//             title: 'สัญญากู้',
+//             to: '',
+//             icon: 'i-mdi-file-document',
+//         },
+//         {
+//             title: 'ฌาปนกิจ',
+//             to: '',
+//             icon: 'i-mdi-account-child',
+//         },
+//         {
+//             title: 'รายการหักเดือนล่าสุด',
+//             to: '',
+//             icon: 'i-mdi-report-box-outline',
+//         },
+//         {
+//             title: 'เงินปันผลและเฉลี่ยคืน',
+//             to: '',
+//             icon: 'i-mdi-dollar',
+//         },
+//         {
+//             title: 'ตั้งค่าความปลอดภัย',
+//             to: '',
+//             icon: 'i-mdi-password',
+//         },
+//     );
+// }
 
 // Handle click event for "สแกน" and set state.scanstate to 1
 const handleClick = (module: { title: string }) => {

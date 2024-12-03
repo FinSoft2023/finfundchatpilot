@@ -9,8 +9,7 @@
 
         <div class="flex justify-center">
             <NuxtLink to="/transaction">
-                <UIcon name="i-mdi-qrcode"
-                    class="w-60 h-60"></UIcon>
+                <img src="@/public/images/qr.png" alt="QR Code" class="w-48 h-48" />
             </NuxtLink>
         </div>
         <h1 class="mt-4 text-center text-2xl tracking-tight font-light lg:text-2xl text-gray-900 dark:text-white">

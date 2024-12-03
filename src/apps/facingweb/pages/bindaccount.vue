@@ -10,7 +10,7 @@
             <UButton @click="steps = 1"
                 block>ถัดไป</UButton>
             <UButton color="white"
-                @click="steps = 1"
+                @click="steps = 1 , subscription = true"
                 block>สมัครสามชิกใหม่</UButton>
         </div>
         <div v-if="steps === 1"
@@ -55,6 +55,7 @@ const links = () => {
     navigateTo('/');
 }
 const steps = ref(0);
+const subscription = ref(false);
 
 const newData = () => {
     const setData = {
@@ -62,8 +63,8 @@ const newData = () => {
     };
     state.value.accountstate = setData.accountstate;
     console.log('data updated', newData);
-    if (state.value.scanstate === 1) {
-        navigateTo('/transaction');
+    if (subscription.value === true) {
+        navigateTo('/subscription');
     }else{
         navigateTo('/menuline');
     }

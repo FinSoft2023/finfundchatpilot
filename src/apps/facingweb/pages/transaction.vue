@@ -77,24 +77,25 @@ if (state.value.accountstate === 1) {
         title: 'สมัครสมาชิกใหม่',
         icon: 'i-mdi-user',
     });
-} else if (state.value.accountstate === 2) {
-        modules.push(
-            {
-                title: 'ฝากเงิน',
-                icon: 'i-heroicons-wallet',
-            },
-            {
-                title: 'ถอนเงิน',
-                icon: 'i-heroicons-wallet',
-            },
-            {
-                title: 'กู้สามัญ',
-                icon: 'i-mdi-cash-fast',
-            },
-            {
-                title: 'กู้ฉุกเฉิน',
-                icon: 'i-mdi-cash-fast',
-            },
-        );
-    }
+} 
+// else if (state.value.accountstate === 2) {
+//     modules.push(
+//         {
+//             title: 'ฝากเงิน',
+//             icon: 'i-heroicons-wallet',
+//         },
+//         {
+//             title: 'ถอนเงิน',
+//             icon: 'i-heroicons-wallet',
+//         },
+//         {
+//             title: 'กู้สามัญ',
+//             icon: 'i-mdi-cash-fast',
+//         },
+//         {
+//             title: 'กู้ฉุกเฉิน',
+//             icon: 'i-mdi-cash-fast',
+//         },
+//     );
+// }
 </script>

@@ -99,7 +99,7 @@ if (state.value.accountstate === 0) {
 
 // Handle click event for "สแกน" and set state.scanstate to 1
 const handleClick = (module: { title: string }) => {
-    if (module.title === 'สแกน') {
+    if (module.title === 'ติดต่อสหกรณ์') {
         const setData = { scanstate: 1 };
         state.value.scanstate = setData.scanstate;
     }

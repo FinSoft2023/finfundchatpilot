@@ -28,9 +28,14 @@
 
                         <div class="flex justify-between items-center mt-2">
                             <!-- Status icon and text -->
-                            <p class="font-bold" :class="state.preparestate === 0 ? 'text-red-500' : 'text-primary'">{{ state.preparestate
-                                === 0 ? 'ยังไม่ได้เตรียมข้อมูล' : 'เตรียมข้อมูลเเล้ว' }}</p>
-
+                            <!-- <p class="font-bold"
+                                :class="state.preparestate === 0 ? 'text-red-500' : 'text-primary'">{{
+                                    state.preparestate
+                                        === 0 ? 'ยังไม่ได้เตรียมข้อมูล' : 'เตรียมข้อมูลเเล้ว' }}</p> -->
+                            <p class="font-bold"
+                                :class="state.preparestate === 0 ? 'text-primary' : 'text-primary'">{{
+                                    state.preparestate
+                                        === 0 ? 'เตรียมข้อมูลเเล้ว' : 'เตรียมข้อมูลเเล้ว' }}</p>
                             <!-- Action button -->
                             <UButton icon="i-mdi-square-edit-outline"
                                 :color="buttonColor"
@@ -52,7 +57,8 @@
             <div class="flex justify-between items-center">
                 <h1 class="text-ms font-bold">เตรียมข้อมูลเเล้ว</h1>
                 <h1 class="text-xl text-orange-400 font-bold">
-                    {{ state.preparestate === 0 ? '0' : state.transaction.length }}
+                    <!-- {{ state.preparestate === 0 ? '0' : state.transaction.length }} -->
+                    {{ state.transaction.length }}
                 </h1>
             </div>
             <h1 class="mb-2 text-sm text-orange-400 font-normal">

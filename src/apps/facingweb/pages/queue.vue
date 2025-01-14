@@ -9,7 +9,7 @@
                         </p>
                         <h1
                             class="mb-4 text-7xl tracking-tight font-extrabold lg:text-9xl text-primary-600 dark:text-primary-500">
-                            A-002</h1>
+                            A-001</h1>
                         <p class="mb-4 text-lg font-light text-gray-500 dark:text-gray-400">
                             กรุณาเปิดหน้านี้ไว้เเล้วรอเจ้าหน้าที่เรียก </p>
                     </div>
@@ -29,6 +29,6 @@ const linkto = () => {
         accountstate: 2,
     };
     state.value.accountstate = setData.accountstate;
-    navigateTo('/menuline');
+    navigateTo('/transaction');
 };
 </script>

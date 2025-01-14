@@ -21,7 +21,7 @@ const links = () => {
 const modules = [{
   title: 'Menu Line',
   description: 'test menu line',
-  to: '/menuline',
+  to: '/transaction',
   icon: 'i-mdi-numeric-1'
 }, {
   title: 'Prepare2',

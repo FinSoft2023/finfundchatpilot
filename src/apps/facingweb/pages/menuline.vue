@@ -30,16 +30,26 @@ const modules = [
         title: 'ติดต่อสหกรณ์',
         to: 'showQrCode',
         icon: 'i-mdi-qrcode',
+    },
+    {   
+        title: 'ฝากเงิน',
+        to: 'showQrCode',
+        icon: 'i-mdi-qrcode',
+    },
+    {
+        title: 'ถอนเงิน',
+        to: 'showQrCode',
+        icon: 'i-mdi-qrcode',
     }
 ];
 
-if (state.value.accountstate === 0) {
-    modules.push({
-        title: 'ผูกบัญชี Line',
-        to: '/bindaccount',
-        icon: 'i-mdi-connection',
-    });
-}
+// if (state.value.accountstate === 0) {
+//     modules.push({
+//         title: 'ผูกบัญชี Line',
+//         to: '/bindaccount',
+//         icon: 'i-mdi-connection',
+//     });
+// }
 // else if (state.value.accountstate === 1) {
 //     modules.push({
 //         title: 'สมัครสมาชิกใหม่',

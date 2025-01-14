@@ -33,11 +33,7 @@ const manualclick = () => {
         preparestate: 1,
     };
     state.value.preparestate = setData.preparestate;
-    if (state.value.scanstate === 0) {
-        navigateTo('/menuline');
-    }else if (state.value.scanstate === 1) {
-        navigateTo('/prepare');
-    }
+    navigateTo('/prepare');
 }
 
 const links = () => {

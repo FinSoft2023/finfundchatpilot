@@ -34,8 +34,8 @@
                             <!-- Action button -->
                             <UButton icon="i-mdi-square-edit-outline"
                                 :color="buttonColor"
-                                :to="state.preparestate === 0 ? '/subscription' : '/subscription'">
-                                {{ state.preparestate === 0 ? 'กรอกข้อมูล' : 'แก้ไขข้อมูล' }}
+                                :to="state.preparestate === 0 ? 'subscription' : '/subscription'">
+                                {{ state.preparestate === 0 ? 'กรอกข้อมูล' : 'กรอกข้อมูล' }}
                             </UButton>
                         </div>
                     </div>
@@ -52,7 +52,7 @@
             <div class="flex justify-between items-center">
                 <h1 class="text-ms font-bold">เตรียมข้อมูลเเล้ว</h1>
                 <h1 class="text-xl text-orange-400 font-bold">
-                    {{ state.transaction.length }}
+                    {{ state.preparestate === 0 ? '0' : state.transaction.length }}
                 </h1>
             </div>
             <h1 class="mb-2 text-sm text-orange-400 font-normal">
@@ -78,7 +78,7 @@ const links = () => {
 };
 
 const buttonColor = computed(() => {
-    return state.value.preparestate === 0 ? 'red' : 'primary';
+    return state.value.preparestate === 0 ? 'primary' : 'primary';
 });
 
 // Function to remove a module from the transaction list

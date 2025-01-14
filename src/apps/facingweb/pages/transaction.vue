@@ -68,16 +68,41 @@ const modules = [
     {
         title: 'สอบถามข้อมูล และอื่นๆ',
         icon: 'i-mdi-document',
+    }, 
+
+    {
+        title: 'สมัครสมาชิกใหม่',
+        icon: 'i-mdi-user',
+    },
+    {
+        title: 'กู้สามัญ',
+        icon: 'i-mdi-cash-fast',
+    },
+    {
+        title: 'กู้ฉุกเฉิน',
+        icon: 'i-mdi-cash-fast',
+    },
+    {
+        title: 'ฝากเงิน',
+        icon: 'i-heroicons-wallet',
+    },
+    {
+        title: 'ถอนเงิน',
+        icon: 'i-heroicons-wallet',
     },
 
 
 ];
-if (state.value.accountstate === 1) {
-    modules.push({
-        title: 'สมัครสมาชิกใหม่',
-        icon: 'i-mdi-user',
-    });
-} 
+// if (state.value.accountstate === 1) {
+//     modules.push({
+//         title: 'สมัครสมาชิกใหม่',
+//         icon: 'i-mdi-user',
+//     });
+//     modules.push({
+//         title: 'ข้อกู้สามัญ',
+//         icon: 'i-mdi-user',
+//     });
+// } 
 // else if (state.value.accountstate === 2) {
 //     modules.push(
 //         {
